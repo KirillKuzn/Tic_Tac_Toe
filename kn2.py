@@ -51,6 +51,21 @@ class Board:
         self.board[random.choice(self.valid)] = '0'
         self.valid.remove(random.choice(self.valid))
 
+class Node:
+    def __init__(self, board, winx=0, draw=0, win0=0, parents=None, move=None):
+        self.board = board
+        self.winx = winx
+        self.draw = draw
+        self.win0 = win0
+        self.parents = parents
+        self.move = move
+        self.child = []
+
+
+class Tree:
+    def __init__(self, node):
+        self.root = node
+
 bd = ['-', '-', '-', '-', '-', '-', '-', '-', '-']
 n = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 a = 0
